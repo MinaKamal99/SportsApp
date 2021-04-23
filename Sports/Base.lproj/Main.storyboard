@@ -76,6 +76,7 @@
                                 <connections>
                                     <outlet property="sportsImageView" destination="byz-vY-o4Q" id="YyV-In-WJ3"/>
                                     <outlet property="sportsNameLabel" destination="fpR-gP-1nD" id="xk3-HD-RqE"/>
+                                    <segue destination="Wbx-DY-PVS" kind="show" id="qXn-f7-0Kq"/>
                                 </connections>
                             </collectionViewCell>
                         </cells>
@@ -129,7 +130,7 @@
             <objects>
                 <tableViewController id="Wbx-DY-PVS" customClass="LeaguesTableViewController" customModule="Sports" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="sH0-5M-JAY">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
@@ -140,7 +141,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-ZU-Pf3">
+                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZNy-ZU-Pf3" customClass="LeagueTableViewCell" customModule="Sports" customModuleProvider="target">
                                             <rect key="frame" x="10" y="10" width="394" height="80"/>
                                             <subviews>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="PNt-9p-OxH">
@@ -159,7 +160,7 @@
                                                         <color key="titleColor" systemColor="systemRedColor"/>
                                                     </state>
                                                     <connections>
-                                                        <action selector="leagueyoutube:" destination="DXU-ti-p5Z" eventType="touchUpInside" id="XI3-0T-jbJ"/>
+                                                        <action selector="leagueYoutubeBtn:" destination="DXU-ti-p5Z" eventType="touchUpInside" id="N8k-tq-vQP"/>
                                                     </connections>
                                                 </button>
                                             </subviews>
@@ -187,9 +188,9 @@
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="cellview" destination="ZNy-ZU-Pf3" id="tFa-XO-6t9"/>
-                                    <outlet property="leagueimage" destination="PNt-9p-OxH" id="i15-cE-xcu"/>
-                                    <outlet property="leaguename" destination="yAY-8V-tuq" id="G8q-B8-9qW"/>
+                                    <outlet property="cellView" destination="ZNy-ZU-Pf3" id="27h-Sv-B9F"/>
+                                    <outlet property="leagueImage" destination="PNt-9p-OxH" id="rjb-Ng-sam"/>
+                                    <outlet property="leagueNameLabel" destination="yAY-8V-tuq" id="3kR-Pk-KKI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -198,10 +199,11 @@
                             <outlet property="delegate" destination="Wbx-DY-PVS" id="N4d-Xm-Iiu"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="Nb6-c7-4Tz"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zsa-mf-gyD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="935"/>
+            <point key="canvasLocation" x="1749" y="783"/>
         </scene>
     </scenes>
     <resources>

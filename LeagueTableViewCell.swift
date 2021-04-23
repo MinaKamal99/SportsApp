@@ -10,15 +10,23 @@ import UIKit
 class LeagueTableViewCell: UITableViewCell {
 
     
-    @IBAction func leagueyoutube(_ sender: UIButton) {
+//    @IBAction func leagueyoutube(_ sender: UIButton) {
+//    }
+//    @IBOutlet weak var leaguename: UILabel!
+//    @IBOutlet weak var leagueimage: UIImageView!
+//    @IBOutlet weak var cellview: UIView!
+    
+    
+    @IBOutlet weak var leagueNameLabel: UILabel!
+    
+    @IBOutlet weak var leagueImage: UIImageView!
+    @IBAction func leagueYoutubeBtn(_ sender: UIButton) {
     }
-    @IBOutlet weak var leaguename: UILabel!
-    @IBOutlet weak var leagueimage: UIImageView!
-    @IBOutlet weak var cellview: UIView!
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
+    @IBOutlet weak var cellView: UIView!
+//    override func awakeFromNib() {
+//        super.awakeFromNib()
+//        // Initialization code
+//    }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)

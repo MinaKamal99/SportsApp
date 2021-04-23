@@ -29,7 +29,6 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
         super.viewDidLoad()
         
         homePresenter.setDelegate(homeVC: self)
-        
         homePresenter.getAllSports { (allSports) in
             if allSports.count > 0 {
             self.allSportsObjects = allSports
@@ -140,11 +139,10 @@ class HomeCollectionViewController: UICollectionViewController , UICollectionVie
     }
     */
 }
-
 extension HomeCollectionViewController : HomeDelegateProtocol {
     func navigateToLeaguges(selectedSport: String) {
         let leagueVC = LeaguesTableViewController()
         leagueVC.selectedSport = selectedSport
-       // present(leagueVC, animated: true, completion: nil)
+        present(leagueVC, animated: true, completion: nil)
     }
 }

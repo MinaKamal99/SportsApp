@@ -9,6 +9,8 @@ import UIKit
 import SDWebImage
 class LeaguesTableViewController: UITableViewController {
     private let leaguePresenter = LeaguePresenter()
+    private let reuseIdentifier = "leagueCell"
+
     
     var selectedSport : String!
     var allleagueviewobjects: ([LeagueViewObject])=[]
@@ -16,10 +18,10 @@ class LeaguesTableViewController: UITableViewController {
         super.viewDidLoad()
         print("DidLoad")
         
-        print("selected sport is\(selectedSport!)")
+     print("selected sport is\(selectedSport!)")
+       tableView.register(LeagueTableViewCell.self, forCellReuseIdentifier: reuseIdentifier)
         
-        
-        if let safeSelectedSport = selectedSport{
+       // if let safeSelectedSport = selectedSport{
             leaguePresenter.getLeagues(strSport: "soccer") { (allLeagues) in
                 if(allLeagues.count>0){
                     self.allleagueviewobjects=allLeagues
@@ -54,10 +56,14 @@ class LeaguesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     
-        let cell = self.tableView?.dequeueReusableCell(withIdentifier: "leagueCell")
-            as! LeagueTableViewCell
-          cell.leaguename.text=allleagueviewobjects[indexPath.row].strLeague
-          cell.leagueimage.sd_setImage(with: URL(string: allleagueviewobjects[indexPath.row].strBadge+"/tiny"), placeholderImage: UIImage(named: "1.jpg"))
+//        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+//            as! LeagueTableViewCell
+//
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as! LeagueTableViewCell
+        
+          cell.leagueNameLabel.text = allleagueviewobjects[indexPath.row].strLeague
+          cell.leagueImage.sd_setImage(with: URL(string: allleagueviewobjects[indexPath.row].strBadge+"/tiny"), placeholderImage: UIImage(named: "1.jpg"))
         return cell
     }
     
